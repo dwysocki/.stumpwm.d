@@ -6,6 +6,13 @@
 
 
 ;;
+;; -- windows --
+;;
+
+(setf *window-border-style* :thin)
+
+
+;;
 ;; -- message bar --
 ;;
 

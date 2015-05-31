@@ -1,2 +1,7 @@
-# emacs autosave
+#
+# -- emacs --
+#
+
+\#*
+.\#
 *~
