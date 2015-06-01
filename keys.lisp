@@ -38,13 +38,13 @@
 (fill-keymap *root-map*
   (kbd "C-a") '*new-apps-map*
   ;; switch to apps
-  (kbd "C-x") "urxvt"
+  (kbd "C-t") "urxvt"
   (kbd "C-e") "emacs"
   (kbd "C-f") "firefox"
   (kbd "C-c") "google-chrome-stable"
   ;;
   (kbd "C-b") "banish"
-  (kbd "C-t") "time"
+  (kbd "t")   "time"
   (kbd "!")   "exec"
   (kbd "C-g") "abort"
   (kbd ";")   "colon"
@@ -52,6 +52,7 @@
   (kbd "v")   "version"
   (kbd "C-m") "lastmsg"
   (kbd "G")   "vgroups"
+  *escape-fake-key* "send-escape"
   (kbd "g")   '*groups-map*
   (kbd "x")   '*exchange-window-map*
   (kbd "F1")  "gselect 1"
@@ -67,7 +68,7 @@
   (kbd "h")   '*help-map*)
 
 (fill-keymap *new-apps-map*
-  (kbd "C-x") "exec urxvt"
+  (kbd "C-t") "exec urxvt"
   (kbd "C-e") "exec emacsclient -c -a \"\""
   (kbd "C-f") "exec firefox"
   (kbd "C-c") "exec google-chrome-stable")
