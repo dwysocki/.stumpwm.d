@@ -18,12 +18,18 @@ which provides it.
     - used to display volume level in `mode-line.lisp`
     - used to modify volume level in `system.lisp`
     - will only work if your system is running ALSA for its sound
-- [awk](https://www.archlinux.org/packages/core/x86_64/gawk/)
-    - used to filter output streams from shell commands in various scripts
-- [sed](https://www.archlinux.org/packages/core/x86_64/sed/)
+- [awk](https://www.archlinux.org/packages/core/x86_64/gawk/),
+  [cut](https://www.archlinux.org/packages/core/x86_64/coreutils/),
+  [grep](https://www.archlinux.org/packages/core/x86_64/grep/),
+  [sed](https://www.archlinux.org/packages/core/x86_64/sed/),
+  [tail](https://www.archlinux.org/packages/core/x86_64/coreutils/),
+  and
+  [tr](https://www.archlinux.org/packages/core/x86_64/coreutils/)
     - used to filter output streams from shell commands in various scripts
 - [xbacklight](https://www.archlinux.org/packages/extra/x86_64/xorg-xbacklight/)
     - used to modify backlight in `system.lisp`
+- [xrdb](https://www.archlinux.org/packages/core/x86_64/coreutils/)
+    - used to query X resources in `xresources.lisp`
 
 
 # Links

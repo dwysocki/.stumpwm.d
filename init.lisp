@@ -29,6 +29,7 @@
 ;; load all files
 (load-files
   '("util"
+    "xresources"
     "apps"
     "gaps"
     "keys"
