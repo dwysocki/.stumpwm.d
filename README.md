@@ -12,12 +12,6 @@ installed, and will not work correctly without them. Here I list the programs,
 along with a description of their usage, and a link to the Arch Linux package
 which provides it.
 
-- [acpi](https://www.archlinux.org/packages/community/x86_64/acpi/)
-    - used to obtain battery status in `mode-line.lisp`
-- [amixer](https://www.archlinux.org/packages/extra/x86_64/alsa-utils/)
-    - used to display volume level in `mode-line.lisp`
-    - used to modify volume level in `system.lisp`
-    - will only work if your system is running ALSA for its sound
 - [awk](https://www.archlinux.org/packages/core/x86_64/gawk/),
   [cut](https://www.archlinux.org/packages/core/x86_64/coreutils/),
   [grep](https://www.archlinux.org/packages/core/x86_64/grep/),
@@ -26,6 +20,14 @@ which provides it.
   and
   [tr](https://www.archlinux.org/packages/core/x86_64/coreutils/)
     - used to filter output streams from shell commands in various scripts
+- [acpi](https://www.archlinux.org/packages/community/x86_64/acpi/)
+    - used to obtain battery status in `mode-line.lisp`
+- [amixer](https://www.archlinux.org/packages/extra/x86_64/alsa-utils/)
+    - used to display volume level in `mode-line.lisp`
+    - used to modify volume level in `system.lisp`
+    - will only work if your system is running ALSA for its sound
+- [display](https://www.archlinux.org/packages/extra/x86_64/display/)
+    - used to display wallpaper in `layout.lisp`
 - [xbacklight](https://www.archlinux.org/packages/extra/x86_64/xorg-xbacklight/)
     - used to modify backlight in `system.lisp`
 - [xrdb](https://www.archlinux.org/packages/core/x86_64/coreutils/)
