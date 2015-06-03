@@ -21,6 +21,8 @@
 
 ;; map for launching new applications
 (defvar *new-apps-map* nil)
+;; map for system information and commands
+(defvar *system-map* nil)
 
 ;; bare keybindings
 (fill-keymap *top-map*
@@ -36,7 +38,11 @@
 
 ;; prefix keybindings
 (fill-keymap *root-map*
+  (kbd "h")   '*help-map*
   (kbd "C-a") '*new-apps-map*
+  (kbd "C-s") '*system-map*
+  (kbd "g")   '*groups-map*
+  (kbd "x")   '*exchange-window-map*
   ;; switch to apps
   (kbd "C-t") "urxvt"
   (kbd "C-e") "emacs"
@@ -44,17 +50,13 @@
   (kbd "C-c") "google-chrome-stable"
   ;;
   (kbd "C-b") "banish"
-  (kbd "t")   "time"
   (kbd "!")   "exec"
   (kbd "C-g") "abort"
   (kbd ";")   "colon"
   (kbd ":")   "eval"
-  (kbd "v")   "version"
   (kbd "C-m") "lastmsg"
   (kbd "G")   "vgroups"
   *escape-fake-key* "send-escape"
-  (kbd "g")   '*groups-map*
-  (kbd "x")   '*exchange-window-map*
   (kbd "F1")  "gselect 1"
   (kbd "F2")  "gselect 2"
   (kbd "F3")  "gselect 3"
@@ -64,8 +66,7 @@
   (kbd "F7")  "gselect 7"
   (kbd "F8")  "gselect 8"
   (kbd "F9")  "gselect 9"
-  (kbd "F10") "gselect 10"
-  (kbd "h")   '*help-map*)
+  (kbd "F10") "gselect 10")
 
 (fill-keymap *new-apps-map*
   (kbd "C-t") "exec urxvt"
@@ -73,6 +74,13 @@
   (kbd "C-f") "exec firefox"
   (kbd "C-c") "exec google-chrome-stable")
 
+(fill-keymap *system-map*
+  (kbd "t")   "time"
+  (kbd "C-t") "time"
+  (kbd "v")   "volume-set"
+  (kbd "C-v") "volume-set"
+  (kbd "b")   "brightness-set"
+  (kbd "C-b") "brightness-set")
 
 (fill-keymap *group-top-map*
   *escape-key* '*group-root-map*)
@@ -146,7 +154,7 @@
   (kbd "M-Right") "move-window right"
   (kbd "+")       "balance-frames"
   (kbd "l")       "redisplay"
-  (kbd "s-l")     "redisplay")
+  (kbd "C-l")     "redisplay")
 
 (fill-keymap *groups-map*
   (kbd "g")     "groups"
