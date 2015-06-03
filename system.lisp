@@ -56,6 +56,7 @@
 (defcommand brightness-set (percent)
   ((:number "percent: "))
   "Set the screen's brightness to `percent'"
-  (run-shell-command (concatenate 'string
-                       "xbacklight -set "
-                       (write-to-string percent))))
+  (when (and percent (<= 0 percent 100))
+    (run-shell-command (concatenate 'string
+                         "xbacklight -set "
+                         (write-to-string percent)))))
