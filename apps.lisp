@@ -8,7 +8,6 @@
   (run-or-raise "urxvt" '(:class "URxvt")))
 
 (defcommand emacs () ()
-  "Hi there"
   (run-or-raise "emacsclient -c -a \"\"" '(:class "Emacs")))
 
 (defcommand firefox () ()
@@ -16,3 +15,6 @@
 
 (defcommand google-chrome-stable () ()
   (run-or-raise "google-chrome-stable" '(:class "Google-chrome-stable")))
+
+(defcommand ncmpcpp () ()
+  (run-or-raise "urxvt -e ncmpcpp" '(:title "ncmpcpp")))
