@@ -146,3 +146,16 @@
     (*unfocus-color*       set-unfocus-color)
     (*float-focus-color*   set-float-focus-color)
     (*float-unfocus-color* set-float-unfocus-color)))
+
+
+;;
+;; -- altering X resources --
+;;
+
+(defcommand xresources-load () ()
+  "Load X resources from ~/.Xresources"
+  (run-shell-command "xrdb -load ~/.Xresources"))
+
+(defcommand xresources-merge () ()
+  "Merge X resources from ~/.Xresources"
+  (run-shell-command "xrdb -merge ~/.Xresources"))
