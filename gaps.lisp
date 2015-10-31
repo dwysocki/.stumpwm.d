@@ -5,7 +5,7 @@
 (in-package :stumpwm)
 
 (defvar *useless-gaps-size* 5)
-(defvar *useless-gaps-on* t)
+(defvar *useless-gaps-on* nil)
 
 ;; Redefined - with `if`s for *useless-gaps-on*
 (defun maximize-window (win)
