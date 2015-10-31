@@ -60,3 +60,27 @@
     (run-shell-command (concatenate 'string
                          "xbacklight -set "
                          (write-to-string percent)))))
+
+;;
+;; -- power commands --
+;;
+
+(defcommand power-shutdown (confirm) ((:y-or-n "Shutdown? "))
+  "Shutdown the computer."
+  (when confirm
+    (run-shell-command "systemctl poweroff")))
+
+(defcommand power-reboot (confirm) ((:y-or-n "Reboot? "))
+  "Restart the computer."
+  (when confirm
+    (run-shell-command "systemctl reboot")))
+
+(defcommand power-suspend (confirm) ((:y-or-n "Suspend? "))
+  "Suspend the computer."
+  (when confirm
+    (run-shell-command "systemctl suspend")))
+
+(defcommand power-hibernate (confirm) ((:y-or-n "Hibernate? "))
+  "Hibernate the computer."
+  (when confirm
+    (run-shell-command "systemctl hibernate")))
