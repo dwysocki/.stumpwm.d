@@ -23,6 +23,8 @@
 (defvar *new-apps-map* nil)
 ;; map for system information and commands
 (defvar *system-map* nil)
+;; map for power commands
+(defvar *power-map* nil)
 
 ;; bare keybindings
 (fill-keymap *top-map*
@@ -41,6 +43,7 @@
   (kbd "h")   '*help-map*
   (kbd "C-a") '*new-apps-map*
   (kbd "C-s") '*system-map*
+  (kbd "s-p") '*power-map*
   (kbd "g")   '*groups-map*
   (kbd "x")   '*exchange-window-map*
   ;; switch to apps
@@ -48,13 +51,14 @@
   (kbd "C-e") "emacs"
   (kbd "C-f") "firefox"
   (kbd "C-c") "google-chrome-stable"
+  (kbd "C-m") "ncmpcpp"
   ;;
   (kbd "C-b") "banish"
   (kbd "!")   "exec"
   (kbd "C-g") "abort"
   (kbd ";")   "colon"
   (kbd ":")   "eval"
-  (kbd "C-m") "lastmsg"
+  (kbd "m") "lastmsg"
   (kbd "G")   "vgroups"
   *escape-fake-key* "send-escape"
   (kbd "F1")  "gselect 1"
@@ -72,7 +76,8 @@
   (kbd "C-t") "exec urxvt"
   (kbd "C-e") "exec emacsclient -c -a \"\""
   (kbd "C-f") "exec firefox"
-  (kbd "C-c") "exec google-chrome-stable")
+  (kbd "C-c") "exec google-chrome-stable"
+  (kbd "C-m") "exec urxvt -e ncmpcpp")
 
 (fill-keymap *system-map*
   (kbd "t")   "time"
@@ -81,6 +86,12 @@
   (kbd "C-v") "volume-set"
   (kbd "b")   "brightness-set"
   (kbd "C-b") "brightness-set")
+
+(fill-keymap *power-map*
+  (kbd "C-s") "power-shutdown t"
+  (kbd "C-r") "power-reboot t"
+  (kbd "C-p") "power-suspend t"
+  (kbd "C-h") "power-hibernate t")
 
 (fill-keymap *group-top-map*
   *escape-key* '*group-root-map*)
@@ -138,6 +149,7 @@
   (kbd "S")       "hsplit"
   (kbd "r")       "iresize"
   (kbd "o")       "fnext"
+  (kbd "C-o")     "fnext"
   (kbd "TAB")     "fnext"
   (kbd "M-TAB")   "fother"
   (kbd "f")       "fselect"
