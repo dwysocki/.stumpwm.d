@@ -65,3 +65,24 @@
           "display -window root " (namestring wallpaper-path))))))
 
 (load-wallpaper)
+
+
+#|
+
+;;
+;; -- window placement rules --
+;;
+
+(clear-window-placement-rules)
+
+(define-frame-preference "Default"
+  (0 t t :class "Emacs")
+  (1 t t :class "URxvt"))
+
+(define-frame-preference "Web"
+  (0 t t :class "Firefox"))
+
+(define-frame-preference "Media"
+  (0 t t :title "ncmpcpp"))
+
+|#
