@@ -13,6 +13,19 @@
 ;;
 
 (setf *window-border-style* :thin)
+(setf *window-number-map* "1234567890")
+
+
+;;
+;; -- groups --
+;;
+
+(setf *group-number-map* "1234567890")
+;; create groups at startup
+(when *initializing*
+  (gnewbg "Work")
+  (gnewbg "Web")
+  (gnewbg "Media"))
 
 
 ;;
