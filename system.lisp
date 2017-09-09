@@ -32,8 +32,14 @@
                        (write-to-string percent)
                        "%")))
 
+;; ; For vanilla ALSA
+;; (defcommand volume-toggle () ()
+;;   (run-shell-command "amixer set Master toggle"))
+
+; For ALSA with PulseAudio
 (defcommand volume-toggle () ()
-  (run-shell-command "amixer set Master toggle"))
+  (run-shell-command "amixer -D pulse sset Master toggle"))
+
 
 ;;
 ;; -- brightness commands --
