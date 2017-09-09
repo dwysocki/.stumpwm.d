@@ -17,4 +17,13 @@
   (run-or-raise "google-chrome-stable" '(:class "Google-chrome-stable")))
 
 (defcommand ncmpcpp () ()
-  (run-or-raise "urxvt -e ncmpcpp" '(:title "ncmpcpp")))
+  (run-or-raise "urxvt -e ncmpcpp" '(:title "ncmpcpp" :class "URxvt")))
+
+(defcommand alsamixer () ()
+  (run-or-raise "urxvt -e alsamixer" '(:title "alsamixer" :class "URxvt")))
+
+(defcommand skype () ()
+  (run-or-raise "skypeforlinux" '(:class "skypeforlinux")))
+
+(defcommand teamspeak () ()
+  (run-or-raise "teamspeak3" '(:class "TeamSpeak 3")))

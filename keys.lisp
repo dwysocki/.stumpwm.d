@@ -21,12 +21,16 @@
 
 ;; map for launching new applications
 (defvar *new-apps-map* nil)
+;; map for chatting programs
+(defvar *chat-map* nil)
 ;; map for system information and commands
 (defvar *system-map* nil)
 ;; map for power commands
 (defvar *power-map* nil)
 
+
 ;; bare keybindings
+
 (fill-keymap *top-map*
   ;; root map
   *escape-key* '*root-map*
@@ -36,12 +40,20 @@
   (kbd "XF86AudioMute")        "volume-toggle"
   ;; brightness controls
   (kbd "XF86MonBrightnessDown") "brightness-down 10"
-  (kbd "XF86MonBrightnessUp")   "brightness-up 10")
+  (kbd "XF86MonBrightnessUp")   "brightness-up 10"
+  ;; super shortcuts
+  (kbd "s-t") "urxvt"
+  (kbd "s-e") "emacs"
+  (kbd "s-f") "firefox"
+  (kbd "s-;") "fnext")
+
+
 
 ;; prefix keybindings
 (fill-keymap *root-map*
   (kbd "h")   '*help-map*
   (kbd "C-a") '*new-apps-map*
+  (kbd "C-y") '*chat-map*
   (kbd "C-s") '*system-map*
   (kbd "s-p") '*power-map*
   (kbd "g")   '*groups-map*
@@ -79,9 +91,18 @@
   (kbd "C-c") "exec google-chrome-stable"
   (kbd "C-m") "exec urxvt -e ncmpcpp")
 
+(fill-keymap *chat-map*
+  (kbd "s")   "skype"
+  (kbd "C-s") "skype"
+  (kbd "t")   "teamspeak"
+  (kbd "C-t") "teamspeak")
+
+
 (fill-keymap *system-map*
   (kbd "t")   "time"
   (kbd "C-t") "time"
+  (kbd "a")   "alsamixer"
+  (kbd "C-a") "alsamixer"
   (kbd "v")   "volume-set"
   (kbd "C-v") "volume-set"
   (kbd "b")   "brightness-set"
@@ -98,7 +119,6 @@
 
 (fill-keymap *group-root-map*
   (kbd "C-u") "next-urgent"
-  (kbd "C-w") "windows"
   (kbd "C-k") "delete"
   (kbd "K")   "kill"
   (kbd "'")   "select"
@@ -166,7 +186,8 @@
   (kbd "M-Right") "move-window right"
   (kbd "+")       "balance-frames"
   (kbd "l")       "redisplay"
-  (kbd "C-l")     "redisplay")
+  (kbd "C-l")     "redisplay"
+  (kbd "s-l")     "exec slock")
 
 (fill-keymap *groups-map*
   (kbd "g")     "groups"
