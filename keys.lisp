@@ -109,10 +109,10 @@
   (kbd "C-b") "brightness-set")
 
 (fill-keymap *power-map*
-  (kbd "C-s") "power-shutdown t"
-  (kbd "C-r") "power-reboot t"
-  (kbd "C-p") "power-suspend t"
-  (kbd "C-h") "power-hibernate t")
+  (kbd "C-S") "power-shutdown y"
+  (kbd "C-R") "power-reboot y"
+  (kbd "C-P") "power-suspend y"
+  (kbd "C-H") "power-hibernate y")
 
 (fill-keymap *group-top-map*
   *escape-key* '*group-root-map*)
